@@ -35,6 +35,12 @@ def squares(a):
     return b
 
 
+def square_root(a):
+    a = int(a)
+    b = math.sqrt(a)
+    return round(float(b), 8)
+
+
 class Calculator:
     result = 0
 
@@ -59,6 +65,10 @@ class Calculator:
 
     def square(self, a):
         self.result = squares(a)
+        return self.result
+
+    def sq_root(self, a):
+        self.result = square_root(a)
         return self.result
 
 
