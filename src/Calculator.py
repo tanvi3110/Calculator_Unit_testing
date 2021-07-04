@@ -29,6 +29,12 @@ def division(a, b):
     return c
 
 
+def squares(a):
+    a = int(a)
+    b = int(a * a)
+    return b
+
+
 class Calculator:
     result = 0
 
@@ -49,6 +55,10 @@ class Calculator:
 
     def divide(self, a, b):
         self.result = division(a, b)
+        return self.result
+
+    def square(self, a):
+        self.result = squares(a)
         return self.result
 
 
