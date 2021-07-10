@@ -1,45 +1,11 @@
-import math
+from Calculator.Subtraction import subtraction
+from Calculator.Addition import addition
+from Calculator.Multiplication import multiplication
+from Calculator.Division import division
+from Calculator.Squares import squares
+from Calculator.Square_root import square_root
+
 from CsvReader import CsvReader
-
-
-def subtraction(a, b):
-    a = int(a)
-    b = int(b)
-    c = b - a
-    return c
-
-
-def addition(a, b):
-    a = int(a)
-    b = int(b)
-    c = a + b
-    return c
-
-
-def multiplication(a, b):
-    a = int(a)
-    b = int(b)
-    c = a * b
-    return c
-
-
-def division(a, b):
-    a = int(a)
-    b = int(b)
-    c = round(float(b / a))
-    return c
-
-
-def squares(a):
-    a = int(a)
-    b = int(a * a)
-    return b
-
-
-def square_root(a):
-    a = int(a)
-    b = math.sqrt(a)
-    return round(float(b), 8)
 
 
 class Calculator:
@@ -77,5 +43,5 @@ class CSVStats(Calculator):
     data = []
 
     def __init__(self, data_file):
-        self.data = CsvReader(data_file)
-        pass
+        super().__init__()
+        self.data = CsvReader.CsvReader(data_file)
