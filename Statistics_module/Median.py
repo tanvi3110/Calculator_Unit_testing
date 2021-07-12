@@ -5,16 +5,13 @@ from Calculator.Addition import addition
 
 def median(num):
     try:
-        num_values = len(num)
-        list_num = [num[i] for i in range(num_values)]
-        list_num.sort()
-        if num_values % 2 == 0:
-            value1 = list_num[int(num_values // 2)]
-            value2 = list_num[int(subtraction((num_values // 2), 1))]
-            median_result = division(addition(value1, value2), 2)
-        else:
-            median_result = list_num[int(division(num_values, 2))]
-        return median_result
+        n = len(num)
+        num.sort()
+        median1 = num[n // 2]
+        median2 = num[n // 2 - 1]
+        result_median = addition(median1, median2)
+        result_median2 = division(2, result_median)
+        return result_median2
     except ZeroDivisionError:
         print("Error: Can't Divide by 0")
     except ValueError:
