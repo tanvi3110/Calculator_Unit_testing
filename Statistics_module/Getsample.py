@@ -1,11 +1,12 @@
 import random
+import numpy as np
 
 
-def random_with_seed(start, stop, seed):
+def generate_randoms(start, end, seed, count):
+    np.random.seed(seed)
+    return np.random.randint(start, end, size=count)
+
+
+def random_with_seed(start, end, seed):
     random.seed(seed)
-    return random.randint(start, stop)
-
-
-#def getSample(data, sample_size):
-#    random_values = random.sample(data, len(sample_size))
-#    return random_values
+    return random.randint(start, end)

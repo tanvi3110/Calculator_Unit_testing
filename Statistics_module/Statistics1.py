@@ -8,7 +8,6 @@ from Statistics_module.PopulationMean import population_mean
 
 
 class Statistics1(Calculator):
-#    data = []
 
     def __init__(self):
         super().__init__()
