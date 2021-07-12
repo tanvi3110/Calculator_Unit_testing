@@ -1,28 +1,30 @@
-import statistics
+import statistics as stats
 import unittest
-from random import randint
+from pprint import pprint
 from random import seed
+from Statistics_module import RandomList as IntRandoms
 from Statistics_module.Statistics1 import Statistics1
-from Statistics_module.Mean import mean
-from Statistics_module.Getsample import getSample
 
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        seed(5)
-        self.statistics = Statistics1()
-        self.testData = float(randint(0, 10))
+        self.statistics1 = Statistics1()
+        self.integerRandomDataT = IntRandoms.generate_randoms(0, 30, 0, 30, False)
+
+    def getUp(self) -> None:
+        return self.integerRandomDataT
 
     def test_instantiate_calculator(self):
-        self.assertIsInstance(self.statistics, Statistics1)
+        self.assertIsInstance(self.statistics1, Statistics1)
 
     def test_decorator_calculator(self):
-        self.assertIsInstance(self.statistics, Statistics1)
+        self.assertIsInstance(self.statistics1, Statistics1)
 
     def test_sample_mean(self):
-        self.assertEqual(self.statistics.result, statistics.mean(self.testData))
-       # self.assertEqual(self.statistics.result, statistics.mean(self.testData))
+        self.assertEqual(self.statistics1.get_mean(self.integerRandomDataT), stats.mean(self.integerRandomDataT))
+        pprint(self.statistics1.get_mean(self.integerRandomDataT))
+        pprint(stats.mean(self.integerRandomDataT))
 
 
 if __name__ == '__main__':
