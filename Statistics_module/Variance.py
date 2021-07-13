@@ -1,17 +1,11 @@
-from Calculator.Squares import squares
-from Calculator.Division import division
-from Statistics_module.PopulationMean import population_mean
+import statistics
 
 
-def variance(num):
+def variance(variance_list):
     try:
-        pop_mean = population_mean(num)
-        num_values = len(num)
-        x = 0
-        for i in num:
-            x = x + squares(i-pop_mean)
-        return division(x, num_values)
-    except ZeroDivisionError:
-        print("Error: Can't Divide by 0")
-    except ValueError:
-        print("Error: Check your data inputs")
+        var = statistics.variance(variance_list)
+#        std_list = sum(variance_list) / len(variance_list)
+#        var = sum(pow(x-std_list, 2) for x in variance_list) / len(variance_list)
+        return var
+    except IndexError or ValueError:
+        return None

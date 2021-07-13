@@ -30,5 +30,8 @@ class MyTestCase(unittest.TestCase):
     def test_sample_mode(self):
         self.assertEqual(int(self.statistics1.get_mode(self.integerRandomDataT)), int(stats.mode(self.integerRandomDataT)))
 
+    def test_sample_variance(self):
+        self.assertEqual(self.statistics1.get_variance(self.integerRandomDataT), stats.variance(self.integerRandomDataT))
+
     if __name__ == '__main__':
         unittest.main()
