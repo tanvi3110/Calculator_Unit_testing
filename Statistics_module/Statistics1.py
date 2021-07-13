@@ -20,3 +20,7 @@ class Statistics1(Calculator):
         self.result = median(data)
         return self.result
 
+    def get_mode(self, data):
+        self.result = mode(data)
+        return self.result
+
