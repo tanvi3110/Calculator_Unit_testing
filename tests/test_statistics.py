@@ -33,5 +33,8 @@ class MyTestCase(unittest.TestCase):
     def test_sample_variance(self):
         self.assertEqual(self.statistics1.get_variance(self.integerRandomDataT), stats.variance(self.integerRandomDataT))
 
+    def test_sample_standard_deviation(self):
+        self.assertEqual(self.statistics1.get_std_deviation(self.integerRandomDataT), stats.stdev(self.integerRandomDataT))
+
     if __name__ == '__main__':
         unittest.main()
