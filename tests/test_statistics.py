@@ -8,8 +8,10 @@ class MyTestCase(unittest.TestCase, RandomGenerate):
 
     def setUp(self) -> None:
         self.statistics1 = Statistics1()
-        self.intRanData1 = RandomGenerate.generate_randoms(0, 30, 2, 30, True)
-        self.decRanData = RandomGenerate.generate_randoms1(10, 30, 2, 10, True)
+        self.intRanData1 = RandomGenerate.generate_random_integer(0, 30, 2, 30, True)
+        self.decRanData = RandomGenerate.generate_random_decimal(10, 30, 2, 10, True)
+        self.intRanDataNS = RandomGenerate.generate_random_integer_no_seed(0, 30)
+        self.decRanDataNS = RandomGenerate.generate_random_decimal_no_seed(0, 30)
 
     def getUp(self) -> None:
         return self.intRanData1
@@ -30,10 +32,7 @@ class MyTestCase(unittest.TestCase, RandomGenerate):
         self.assertEqual(self.statistics1.get_median(self.decRanData), int(stats.median(self.decRanData)))
 
     def test_sample_mode(self):
-      # self.assertEqual(int(self.statistics1.get_mode(self.intRanData1)), int(stats.mode(self.intRanData1)))
-      #  self.assertEqual(self.statistics1.get_mode(self.decRanData), stats.mode(self.decRanData))
-        self.assertTrue(
-          stats.mode(self.intRanData1.tolist()) in self.statistics1.get_mode(self.intRanData1.tolist()))
+        self.assertTrue(stats.mode(self.intRanData1.tolist()) in self.statistics1.get_mode(self.intRanData1.tolist()))
 
     def test_sample_variance(self):
         self.assertEqual(self.statistics1.get_variance(self.intRanData1), stats.variance(self.intRanData1))
