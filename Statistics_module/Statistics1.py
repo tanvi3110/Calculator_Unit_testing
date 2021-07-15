@@ -5,7 +5,6 @@ from Statistics_module.Mode import mode
 # from Statistics_module.Variance import stddev
 from Statistics_module.Standard_Deviation import standard_deviation
 from Statistics_module.Variance import variance
-from Statistics_module.PopulationMean import population_mean
 
 
 class Statistics1(Calculator):
