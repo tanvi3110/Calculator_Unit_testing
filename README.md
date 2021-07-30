@@ -1,5 +1,8 @@
 # Calculator_Unit_testing
 #This is a Calculator made using PYTHON and has Automated Testing.
+
+[![Build Status](https://www.travis-ci.com/tanvi3110/Calculator_Unit_testing.svg?branch=master)](https://www.travis-ci.com/tanvi3110/Calculator_Unit_testing)
+
 ## The calculator performs the following functions:
   Addition
   Subtraction
